@@ -1,14 +1,22 @@
 {
-  "name": "us-taxation-backend-express",
+  "name": "neeraj-us-taxation",
   "version": "1.0.0",
   "description": "Educational backend for US Taxation project (Express + SQLite + JWT)",
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon server.js",
     "start": "node server.js"
   },
   "dependencies": {
-    "...": "..."
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.0",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "sqlite3": "^5.1.7"
   }
 }
