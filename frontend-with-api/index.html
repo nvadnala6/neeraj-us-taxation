@@ -1,0 +1,149 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>US Taxation — API Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="config.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">US Taxation <span class="accent">Demo</span></div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#steps">How it works</a>
+        <a href="#contact">Contact</a>
+        <a href="#" id="loginLink">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>File your Taxes, Maximize your Refunds</h1>
+      <p>Experience a streamlined way to file your U.S. tax returns. Connect, upload, and relax — we handle the rest.</p>
+      <div class="cta">
+        <a class="btn primary" href="#services">Get Tax Estimates</a>
+        <a class="btn" id="startNow">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="cards">
+        <div class="card"><h3>U.S. Individual Returns</h3><p>Form 1040/1040‑SR/1040‑NR — guided filing and reviews.</p></div>
+        <div class="card"><h3>ITIN Assistance</h3><p>Support for applicants who need an ITIN to meet tax obligations.</p></div>
+        <div class="card"><h3>FBAR & FATCA</h3><p>Help with foreign account reporting and compliance.</p></div>
+        <div class="card"><h3>Business Returns</h3><p>Entity formation, planning, and filings.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="benefits" class="section alt">
+    <div class="container">
+      <h2>Exceptional Benefits</h2>
+      <ul class="benefits">
+        <li>Quick Turnaround</li>
+        <li>Maximized Returns</li>
+        <li>Secure & Encrypted</li>
+        <li>Comprehensive Audit Support</li>
+      </ul>
+      <div class="stats">
+        <div class="stat"><span class="num" id="years">8+</span><span class="label">Years Experience</span></div>
+        <div class="stat"><span class="num" id="clients">27k+</span><span class="label">Clients Served</span></div>
+        <div class="stat"><span class="num" id="satisfaction">99%</span><span class="label">Satisfaction</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="steps" class="section">
+    <div class="container">
+      <h2>Steps to Complete Tax Filing</h2>
+      <ol class="steps">
+        <li>Get Started</li>
+        <li>Sign In / Sign Up</li>
+        <li>Submit Documents</li>
+        <li>Review Estimates</li>
+        <li>Consent & File</li>
+        <li>Make Payment & File</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="upload" class="section alt hidden">
+    <div class="container">
+      <h2>Upload your documents</h2>
+      <div id="dropzone" class="dropzone">Drag & drop files here or <button id="browseBtn" class="btn">Browse</button></div>
+      <input type="file" id="fileInput" multiple hidden />
+      <ul id="fileList"></ul>
+    </div>
+  </section>
+
+  <section id="dashboard" class="section hidden">
+    <div class="container">
+      <h2>Your Dashboard</h2>
+      <p>Status: <span id="caseStatus">—</span></p>
+      <h3>Uploaded Documents</h3>
+      <ul id="docs"></ul>
+
+      <h3>Get a Mock Estimate</h3>
+      <div class="grid2">
+        <label>Income <input type="number" id="income" placeholder="60000" /></label>
+        <label>Deductions <input type="number" id="deductions" placeholder="12000" /></label>
+      </div>
+      <button class="btn" id="requestEstimate">Calculate Estimate</button>
+      <pre id="estimateBox" class="codebox"></pre>
+    </div>
+  </section>
+
+  <section id="admin" class="section hidden">
+    <div class="container">
+      <h2>Admin Console</h2>
+      <table class="table" id="adminTable">
+        <thead><tr><th>User</th><th>Doc</th><th>MIME</th><th>Size (KB)</th><th>Uploaded</th><th>Action</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <div class="grid2">
+        <label>User Email <input type="email" id="userEmailStatus" placeholder="user@example.com"></label>
+        <label>Status
+          <select id="newStatus">
+            <option>Under Review</option>
+            <option>Estimate Ready</option>
+            <option>Filed</option>
+            <option>Closed</option>
+          </select>
+        </label>
+      </div>
+      <button class="btn primary" id="btnUpdateStatus">Update Status</button>
+    </div>
+  </section>
+
+  <footer id="contact" class="site-footer">
+    <div class="container">
+      <p>Contact: support@example.com · +1 (728) 792‑9026</p>
+      <p>Demo only -for Bits Capstone Project — no real tax filing happens here.</p>
+    </div>
+  </footer>
+
+  <div id="loginModal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Login / Register</h3>
+      <label>Email <input type="email" id="email" placeholder="user@example.com"/></label>
+      <label>Password <input type="password" id="password" placeholder="••••••••"/></label>
+      <div class="actions">
+        <button class="btn" id="registerBtn">Register</button>
+        <button class="btn primary" id="loginBtn">Login</button>
+        <button class="btn" id="closeLogin">Close</button>
+      </div>
+      <p class="hint">Admin for demo: admin@example.com / Admin@123</p>
+    </div>
+  </div>
+</body>
+</html>
