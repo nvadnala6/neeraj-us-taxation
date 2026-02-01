@@ -25,10 +25,10 @@ app.get("/api/health", (req, res) => {
 });
 
 // ✅ Mount API routes (adjust paths if needed)
-import authRoutes from "./src/routes/auth.js";
-import docRoutes from "./src/routes/docs.js";
-import caseRoutes from "./src/routes/cases.js";
-import estimateRoutes from "./src/routes/estimate.js";
+import authRoutes from "./routes/auth.js";
+import docRoutes from "./routes/docs.js";
+import caseRoutes from "./routes/cases.js";
+import estimateRoutes from "./routes/estimate.js";
 
 app.use("/api/auth", authRoutes);
 app.use("/api/docs", docRoutes);
@@ -38,3 +38,4 @@ app.use("/api/estimate", estimateRoutes);
 // ✅ Start server
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => console.log(`Server running on ${PORT}`));
+
