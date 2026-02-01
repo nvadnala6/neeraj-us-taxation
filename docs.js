@@ -2,7 +2,7 @@ import { Router } from 'express';
 import multer from 'multer';
 import path from 'path';
 import { db } from './db.js';
-import { requireAuth, requireRole } from '../middleware/auth.js';
+import { requireAuth, requireRole } from './middleware/auth.js';
 
 const router = Router();
 const uploadDir = process.env.UPLOAD_DIR || 'uploads';
