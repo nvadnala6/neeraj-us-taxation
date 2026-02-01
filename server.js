@@ -9,5 +9,9 @@ const app = express();
 // middleware...
 // routes...
 
-app.listen(process.env.PORT || 4000, () => console.log("Server running"));
+//app.listen(process.env.PORT || 4000, () => console.log("Server running"));
+
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => console.log(`Server running on ${PORT}`));
+
 
