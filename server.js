@@ -1,6 +1,7 @@
 import fs from "fs";
 import express from "express";
 import cors from "cors";
+import morgan from "morgan";
 
 // Routers (root files)
 import authRoutes from "./auth.js";
@@ -31,6 +32,9 @@ app.use("/api/docs", docRoutes);
 app.use("/api/cases", caseRoutes);
 app.use("/api/estimate", estimateRoutes);
 
+app.use(morgan("combined"));
+
 // Start
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => console.log(`Server running on ${PORT}`));
+
