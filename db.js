@@ -42,7 +42,10 @@ export function initDb(){
 export function seedAdmin(){
   return new Promise((resolve, reject) => {
     db.get('SELECT id FROM users WHERE email=?', ['admin@example.com'], async (err, row) => {
-      if (err) return reject(err);
+      if (err) {
+  console.error("DB ERROR (login):", err);
+  return res.status(500).json({ error: "DB error", details: String(err) });
+}
       if (row) return resolve();
       const hash = await bcrypt.hash('Admin@123', 10);
       const now = new Date().toISOString();
