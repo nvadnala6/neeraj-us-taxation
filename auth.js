@@ -26,7 +26,10 @@ router.post('/login', (req, res) => {
   const { email, password } = req.body;
   if(!email || !password) return res.status(400).json({ error: 'email and password required' });
   db.get('SELECT * FROM users WHERE email=?', [email], async (err, row) => {
-    if(err) return res.status(500).json({ error: 'DB error' });
+    if (err) {
+  console.error("DB ERROR (register):", err);
+  return res.status(500).json({ error: "DB error", details: String(err) });
+}
     if(!row) return res.status(401).json({ error: 'Invalid credentials' });
     const ok = await bcrypt.compare(password, row.password_hash);
     if(!ok) return res.status(401).json({ error: 'Invalid credentials' });
